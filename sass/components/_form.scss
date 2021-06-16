@@ -1,15 +1,23 @@
 .form{
   display: flex;
   width: 300px;
+
   & > input{
-    padding: 0px;
-    border: 0px;
+    border: none;
     height: 50px;
   }
   &__text{
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
     width: 250px;
+    text-align: left;
+    padding: 20px;
+    box-sizing: border-box;
+    &:focus{
+      border: 3px solid black;
+      text-shadow: none;
+      outline: none;
+    }
   }
   &__submit{
     border-top-right-radius: 10px;

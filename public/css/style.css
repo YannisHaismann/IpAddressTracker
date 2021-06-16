@@ -5,19 +5,38 @@ body {
   margin: 0px;
 }
 
+@keyframes headshake {
+  25% {
+    transform: translateX(2%);
+  }
+  75% {
+    transform: translateX(-1%);
+  }
+}
+#headshake-animation {
+  animation: headshake 200ms cubic-bezier(0.4, 0.1, 0.6, 0.9) 2;
+}
+
 .form {
   display: flex;
   width: 300px;
 }
 .form > input {
-  padding: 0px;
-  border: 0px;
+  border: none;
   height: 50px;
 }
 .form__text {
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
   width: 250px;
+  text-align: left;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.form__text:focus {
+  border: 3px solid black;
+  text-shadow: none;
+  outline: none;
 }
 .form__submit {
   border-top-right-radius: 10px;

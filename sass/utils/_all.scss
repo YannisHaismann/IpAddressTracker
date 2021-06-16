@@ -8,3 +8,17 @@ $desktop: 1440px;
 $veryDarkGray: hsl(0, 0%, 17%);
 $darkGray: hsl(0, 0%, 59%);
 
+//ANIMATIONS
+
+@keyframes headshake {
+  25%{
+    transform: translateX(2%);
+  }
+  75%{
+    transform: translateX(-1%);
+  }
+}
+#headshake-animation{
+  animation: headshake 200ms cubic-bezier(.4, .1, .6, .9) 2;
+}
+

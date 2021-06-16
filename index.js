@@ -27,6 +27,11 @@ submit.click(() => {
             },
             error: () => {
                 $("#error").css("display", "block");
+
+                $(".form").attr('id', 'headshake-animation');
+                setTimeout(function (){
+                    $(".form").attr('id', 'none');
+                }, 300)
             }
         });
     }
