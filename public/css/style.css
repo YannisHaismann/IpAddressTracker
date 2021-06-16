@@ -5,6 +5,10 @@ body {
   margin: 0px;
 }
 
+.error {
+  display: none;
+}
+
 @keyframes headshake {
   25% {
     transform: translateX(2%);
