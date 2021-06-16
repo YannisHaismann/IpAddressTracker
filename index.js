@@ -1,35 +1,34 @@
-let submit = $("#submit");
-let userValue, ip;
-var map = L.map('mapid');
-var mymap = map.setView([51.505, -0.09], 13);
-var lat, lng;
-console.log(mymap._lastCenter);
+let submit          = $("#submit");
+var map             = L.map('mapid');
+var mymap           = map.setView([51.505, -0.09], 13);
+
+var lat, lng, ip;
 
 submit.click(() => {
-    userValue = $("#submit-value")[0].value;
-    if(userValue != null || userValue != " "){
-        let url = "https://geo.ipify.org/api/v1?apiKey=at_KLlaoRmux88uW5rZRvfCIHV2UwtVp&ipAddress=" + userValue;
+    ip = $("#submit-value")[0].value;
+    if(ip != null || ip != " "){
+        let url = "https://geo.ipify.org/api/v1?apiKey=at_KLlaoRmux88uW5rZRvfCIHV2UwtVp&ipAddress=" + ip;
 
         $.ajax({
             url: url,
             type: 'GET',
             dataType: 'json',
             success: (data) => {
-                console.log(data);
-                lat = data.location.lat;
-                lng = data.location.lng;
-                mymap = map.setView([lat, lng], 13);
+                lat         = data.location.lat;
+                lng         = data.location.lng;
+                mymap       = map.setView([lat, lng], 13);
+
+                $(".ip-address__value").text(data.ip);
+                $(".location__value").text(data.location.city + ", " + data.location.country + " " + data.location.postalCode)
+                $(".timezone__value").text(data.location.timeZone);
+                $(".isp__value").text(data.isp);
             },
             error: () => {
                 //TEXT ERROR
             }
         });
-
-
-
     }
-    console.log(mymap._lastCenter);
-    userValue = " ";
+    $("#submit-value")[0].value     = "";
 });
 
 
