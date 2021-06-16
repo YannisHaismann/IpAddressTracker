@@ -15,11 +15,13 @@
 <body>
     <header>
         <h1>IP Address Tracker</h1>
-            <input id="submit-value" type="text" name="ip" id="ip" placeholder="Search for any IP address or domain" required/>
-            <input id="submit" type="submit" value=" "/>
-            <div class="error" id="error">
-                <p class="error__text">Cette ip n'est pas valide.</p>
-            </div>
+        <div class="form">
+            <input class="form__text" id="submit-value" type="text" name="ip" id="ip" placeholder=" Search for any IP address or domain" required/>
+            <input  class="form__submit" id="submit" type="submit" value=" "/>
+        </div>
+        <div class="error" id="error">
+            <p class="error__text">Cette ip n'est pas valide.</p>
+        </div>
     </header>
     <div id="mapid">
 

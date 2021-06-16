@@ -1,0 +1,28 @@
+//GENERAL
+header{
+  margin: 0px;
+  background-image: url("../img/pattern-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  & > h1{
+    margin-top: 0px;
+    color: white;
+  }
+}
+
+//PHONE
+@media (max-width: $mobile){
+  header{
+    background-position: center;
+    height: 280px;
+    & > h1{
+      font-size: 25px;
+      text-align: center;
+      padding: 40px 20px 20px 20px;
+    }
+    & > .form{
+      text-align: center;
+      margin: auto;
+    }
+  }
+}
