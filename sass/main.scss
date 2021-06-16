@@ -2,9 +2,11 @@
 @import "base/body";
 @import "utils/all";
 @import "components/form";
+@import "components/mainContent";
 @import "layouts/header";
+@import "layouts/content";
 
 #mapid{
-  height: 400px;
-  width: 600px;
+  height: 100%;
+  width: 100%;
 }
