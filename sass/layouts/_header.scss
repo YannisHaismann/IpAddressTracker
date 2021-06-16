@@ -4,9 +4,15 @@ header{
   background-image: url("../img/pattern-bg.png");
   background-repeat: no-repeat;
   background-size: cover;
+  height: 350px;
+  text-align: center;
   & > h1{
     margin-top: 0px;
     color: white;
+    padding: 40px 20px 20px 20px;
+  }
+  & > .form{
+    margin: auto;
   }
 }
 
@@ -14,15 +20,19 @@ header{
 @media (max-width: $mobile){
   header{
     background-position: center;
-    height: 350px;
     & > h1{
       font-size: 25px;
-      text-align: center;
-      padding: 40px 20px 20px 20px;
     }
-    & > .form{
-      text-align: center;
-      margin: auto;
-    }
+
   }
+}
+
+//TABLET
+@media (max-width: $desktop){
+
+}
+
+//DESKTOP
+@media (min-width: $desktop){
+
 }

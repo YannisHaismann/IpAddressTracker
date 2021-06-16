@@ -55,11 +55,11 @@ body {
   background-color: white;
   z-index: 10000;
   border-radius: 20px;
-  width: 80%;
   font-size: 18px;
   text-align: center;
   letter-spacing: 1px;
   font-weight: bold;
+  box-shadow: 0px 0px 10px 0px;
 }
 .mid-content > div {
   margin: 20px;
@@ -72,31 +72,57 @@ body {
 .mid-content > div > p {
   margin: 0px;
 }
+@media (max-width: 420px) {
+  .mid-content {
+    width: 80%;
+  }
+}
+@media (max-width: 1440px) and (min-width: 420px) {
+  .mid-content {
+    width: 400px;
+  }
+}
+@media (min-width: 1440px) {
+  .mid-content {
+    width: 1000px;
+    display: flex;
+    height: 150px;
+    justify-content: space-around;
+  }
+  .mid-content > div {
+    text-align: left;
+    height: 70px;
+    margin: 35px 0px 35px 0px;
+    padding: 0px 35px 0px 35px;
+  }
+  .mid-content > .location, .mid-content .timezone, .mid-content .isp {
+    border-left: 2px solid #c9c9c9;
+  }
+}
 
 header {
   margin: 0px;
   background-image: url("../img/pattern-bg.png");
   background-repeat: no-repeat;
   background-size: cover;
+  height: 350px;
+  text-align: center;
 }
 header > h1 {
   margin-top: 0px;
   color: white;
+  padding: 40px 20px 20px 20px;
+}
+header > .form {
+  margin: auto;
 }
 
 @media (max-width: 420px) {
   header {
     background-position: center;
-    height: 350px;
   }
   header > h1 {
     font-size: 25px;
-    text-align: center;
-    padding: 40px 20px 20px 20px;
-  }
-  header > .form {
-    text-align: center;
-    margin: auto;
   }
 }
 .mid-content {
