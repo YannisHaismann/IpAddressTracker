@@ -1,6 +1,7 @@
 let submit          = $("#submit");
 var map             = L.map('mapid');
 var mymap           = map.setView([51.505, -0.09], 13);
+var marker          = L.marker([51.505, -0.09], 13).addTo(mymap);
 
 var lat, lng, ip;
 
@@ -8,7 +9,6 @@ submit.click(() => {
     ip = $("#submit-value")[0].value;
     if(ip != null || ip != " "){
         let url = "https://geo.ipify.org/api/v1?apiKey=at_KLlaoRmux88uW5rZRvfCIHV2UwtVp&ipAddress=" + ip;
-
         $.ajax({
             url: url,
             type: 'GET',
@@ -22,15 +22,16 @@ submit.click(() => {
                 $(".location__value").text(data.location.city + ", " + data.location.country + " " + data.location.postalCode)
                 $(".timezone__value").text(data.location.timeZone);
                 $(".isp__value").text(data.isp);
+                $("#error").css("display", "none");
+                marker = L.marker([lat, lng], 13).addTo(mymap);
             },
             error: () => {
-                //TEXT ERROR
+                $("#error").css("display", "block");
             }
         });
     }
     $("#submit-value")[0].value     = "";
 });
-
 
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
